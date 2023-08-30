@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { ComputersCanvas } from './canvas';
+import ErrorBoundary from './ErrorBoundary';
 
 const Hero = () => {
   return (
@@ -24,7 +25,9 @@ const Hero = () => {
           </p>
         </div>
       </div>
+      {/* <ErrorBoundary fallback={<p>Something went wrong</p>}> */}
       <ComputersCanvas />
+      {/* </ErrorBoundary> */}
     </section>
   );
 };
