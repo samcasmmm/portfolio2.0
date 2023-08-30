@@ -25,9 +25,9 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      {/* <ErrorBoundary fallback={<p>Something went wrong</p>}> */}
-      <ComputersCanvas />
-      {/* </ErrorBoundary> */}
+      <ErrorBoundary fallback={<p>Something went wrong</p>}>
+        <ComputersCanvas />
+      </ErrorBoundary>
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
