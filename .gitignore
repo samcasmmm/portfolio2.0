@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-.env
+*.env
 
 # Editor directories and files
 .vscode/*
@@ -23,6 +23,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
 
 # VITE_APP_EMAILJS_SERVICE_ID = service_hgwsper
 # VITE_APP_EMAILJS_TEMPLATE_ID = template_t9j67ma
