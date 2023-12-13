@@ -44,6 +44,13 @@ const Navbar = () => {
               </a>
             </li>
           ))}
+           <li>
+            <a id='downloadLink' href={ResumePDF} target='_blank'>
+              <button class='rounded bg-white px-4 py-2 font-bold text-black transition-all duration-150 hover:bg-slate-200'>
+                Button
+              </button>
+            </a>
+          </li>
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
@@ -77,11 +84,13 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
-              <li>
-              <a id="downloadLink" href={ResumePDF} download>
-    <button class="rounded bg-white px-4 py-2 font-bold text-black transition-all duration-150 hover:bg-slate-200">Button</button>
-  </a>
-              </li>
+               <li>
+            <a id='downloadLink' href={ResumePDF} target='_blank'>
+              <button class='rounded bg-white px-4 py-2 font-bold text-black transition-all duration-150 hover:bg-slate-200'>
+                Button
+              </button>
+            </a>
+          </li>
             </ul>
           </div>
         </div>
