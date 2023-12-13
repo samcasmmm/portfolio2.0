@@ -117,7 +117,7 @@ const experiences = [
     company_name: 'hookfish.in',
     icon: hookfish,
     iconBg: '#383E56',
-    date: 'March 2020 - April 2021',
+    date: 'March 2023 - April 2023',
     points: [
       'Developing and maintaining web applications using React.js and other related technologies.',
 
@@ -126,7 +126,7 @@ const experiences = [
     ],
   },
   {
-    title: 'Fontend & React Native',
+    title: 'Fontend & React Native Developer',
     company_name: 'hookfish.in',
     icon: hookfish,
     iconBg: '#383E56',
