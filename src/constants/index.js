@@ -117,7 +117,7 @@ const experiences = [
     company_name: 'hookfish.in',
     icon: hookfish,
     iconBg: '#383E56',
-    date: 'March 2023 - April 2023',
+    date: 'April 2023 - June 2023',
     points: [
       'Developing and maintaining web applications using React.js and other related technologies.',
 
@@ -130,7 +130,7 @@ const experiences = [
     company_name: 'hookfish.in',
     icon: hookfish,
     iconBg: '#383E56',
-    date: 'March 2020 - April 2021',
+    date: ' July 2023 - Present',
     points: [
       'Enhanced PHP-Laravel website by implementing a role-based model, resolving bugs, and refining access controls for a smoother user experience.',
       'Optimized performance and introduced a new feature in our React Native broker app, elevating UI standards for seamless user interactions.',
