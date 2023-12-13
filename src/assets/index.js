@@ -31,6 +31,7 @@ import hookfish from './company/hookfish.jpg';
 import carrent from './carrent.png';
 import jobit from './jobit.png';
 import tripguide from './tripguide.png';
+import ResumePDF from './SamirBagwanResume.pdf';
 
 export {
   logo,
@@ -63,4 +64,6 @@ export {
   jobit,
   tripguide,
   hookfish,
+
+  ResumePDF
 };
