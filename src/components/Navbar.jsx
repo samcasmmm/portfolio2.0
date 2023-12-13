@@ -47,7 +47,7 @@ const Navbar = () => {
            <li>
             <a id='downloadLink' href={ResumePDF} target='_blank'>
               <button class='rounded bg-white px-4 py-2 font-bold text-black transition-all duration-150 hover:bg-slate-200'>
-                Button
+                Resume
               </button>
             </a>
           </li>
@@ -87,7 +87,7 @@ const Navbar = () => {
                <li>
             <a id='downloadLink' href={ResumePDF} target='_blank'>
               <button class='rounded bg-white px-4 py-2 font-bold text-black transition-all duration-150 hover:bg-slate-200'>
-                Button
+              Resume
               </button>
             </a>
           </li>
