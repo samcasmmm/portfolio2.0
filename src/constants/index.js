@@ -125,6 +125,20 @@ const experiences = [
       'Also participated in React Native project',
     ],
   },
+  {
+    title: 'Fontend & React Native',
+    company_name: 'hookfish.in',
+    icon: hookfish,
+    iconBg: '#383E56',
+    date: 'March 2020 - April 2021',
+    points: [
+      'Enhanced PHP-Laravel website by implementing a role-based model, resolving bugs, and refining access controls for a smoother user experience.',
+      'Optimized performance and introduced a new feature in our React Native broker app, elevating UI standards for seamless user interactions.',
+      'Improved React Native app with a dynamic map view centered on user location and integrated a robust roles and permissions modal for enhanced security and streamlined access management.',
+      'Boosted performance in a complex React app through memoization and code splitting, reducing load times and enhancing user interactions.',
+      'Implemented lazy loading and code splitting in a React dashboard app, optimizing initial loading and improving performance by loading components based on user interactions.',
+    ],
+  }
   // {
   //   title: 'React Native Developer',
   //   company_name: 'Tesla',
