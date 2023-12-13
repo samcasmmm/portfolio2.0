@@ -113,16 +113,15 @@ const technologies = [
 
 const experiences = [
   {
-    title: 'React.js Developer Intern',
+    title: 'ReactJS Developer Intern',
     company_name: 'hookfish.in',
     icon: hookfish,
     iconBg: '#383E56',
-    date: 'March 2023 - April 2023',
+    date: 'April 2023 - June 2023',
     points: [
-      'Developing and maintaining web applications using React.js and other related technologies.',
-
-      'Implementing responsive design and ensuring cross-browser compatibility.',
-      'Also participated in React Native project',
+      'I modernized the admin panel’s architecture by migrating from PHP to ReactJS, introducing streamlined pagination and robust search features, all while elevating the overall user experience with a sleek, intuitive interface.',
+      'I delved into React Native, crafting HookFish, a seller app, from the ground up.',
+      'Ensured reliability by conducting end-to-end testing using Cypress for a React application, validating the entire user journey for stability',
     ],
   },
   {
@@ -130,7 +129,7 @@ const experiences = [
     company_name: 'hookfish.in',
     icon: hookfish,
     iconBg: '#383E56',
-    date: 'March 2020 - April 2021',
+    date: ' July 2023 - Present',
     points: [
       'Enhanced PHP-Laravel website by implementing a role-based model, resolving bugs, and refining access controls for a smoother user experience.',
       'Optimized performance and introduced a new feature in our React Native broker app, elevating UI standards for seamless user interactions.',

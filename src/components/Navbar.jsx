@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styles } from '../styles';
 import { navLinks } from '../constants/index';
-import { sblogo, menu, close } from '../assets';
+import { sblogo, menu, close,ResumePDF } from '../assets';
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
@@ -77,6 +77,11 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
+              <li>
+              <a id="downloadLink" href={ResumePDF} download>
+    <button class="rounded bg-white px-4 py-2 font-bold text-black transition-all duration-150 hover:bg-slate-200">Button</button>
+  </a>
+              </li>
             </ul>
           </div>
         </div>
