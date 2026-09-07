@@ -16,6 +16,8 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     color-scheme: dark;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(145, 94, 255, 0.4) #050816;
   }
 
   body {
@@ -23,6 +25,27 @@
     color: #ffffff;
     overflow-x: hidden;
   }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(145, 94, 255, 0.5) 0%, rgba(0, 245, 255, 0.35) 100%);
+  border-radius: 9999px;
+  border: 2px solid #050816;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #915EFF 0%, #00f5ff 100%);
 }
 
 /* Background utilities */

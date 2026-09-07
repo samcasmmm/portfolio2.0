@@ -2,15 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  Briefcase,
-  Terminal,
-  Smartphone,
-  ChevronRight,
-  Sparkles,
-  Layers,
-  ArrowRight,
-} from 'lucide-react';
+import { Briefcase, Terminal, Smartphone, ChevronRight, Sparkles, Layers, ArrowRight } from 'lucide-react';
 import { fadeIn } from '@/utils/motion';
 
 export interface WorkHeaderProps {
@@ -47,29 +39,22 @@ export const WorkHeader: React.FC<WorkHeaderProps> = ({
       </motion.div>
 
       {/* Main Headline & Context Narrative */}
-      <motion.div
-        variants={fadeIn('up', 'tween', 0.15, 0.7)}
-        className='space-y-3'
-      >
+      <motion.div variants={fadeIn('up', 'tween', 0.15, 0.7)} className='space-y-3'>
         <h2 className='font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white'>
-          Work & Professional{' '}
-          <span className='wave-gradient-text font-black'>Experience.</span>
+          Work & Professional <span className='wave-gradient-text font-black'>Experience.</span>
         </h2>
         <p className='max-w-3xl text-sm sm:text-base font-light leading-relaxed text-secondary'>
-          A chronological track record of shipping resilient, high-concurrency SaaS platforms,
-          fluid 60fps mobile applications, and enterprise design systems across industry roles.
+          A chronological track record of shipping resilient, high-concurrency SaaS platforms, fluid 60fps mobile
+          applications, and enterprise design systems across industry roles.
         </p>
       </motion.div>
 
       {/* 2 Detailed & Tailored Career Highlights Cards */}
-      <motion.div
-        variants={fadeIn('up', 'tween', 0.25, 0.7)}
-        className='grid grid-cols-1 md:grid-cols-2 gap-5 pt-2'
-      >
+      <motion.div variants={fadeIn('up', 'tween', 0.25, 0.7)} className='grid grid-cols-1 md:grid-cols-2 gap-5 pt-2'>
         {/* Card 1: Engineering Journey & Milestones */}
         <div className='group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0c0d18]/80 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#915EFF]/40 hover:bg-[#111326]/90 hover:shadow-[0_16px_36px_-10px_rgba(145,94,255,0.18)]'>
           {/* Ambient Purple Glow */}
-          <div className='absolute inset-0 bg-gradient-to-br from-purple-500/15 via-indigo-500/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
+          <div className='absolute inset-0 bg-linear-to-br from-purple-500/15 via-indigo-500/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
 
           <div className='relative z-10 space-y-5'>
             {/* Top Bar */}
@@ -88,9 +73,7 @@ export const WorkHeader: React.FC<WorkHeaderProps> = ({
               <div className='font-mono text-2xl sm:text-3xl font-bold tracking-tight text-white'>
                 3+ Years Production
               </div>
-              <p className='mt-1 font-mono text-xs text-secondary'>
-                HookFish (Intern & Full-Time) → Catalyst Media → Texto Digital
-              </p>
+              <p className='mt-1 font-mono text-xs text-secondary'>HookFish → Catalyst Media → Texto Digital</p>
             </div>
 
             {/* Tailored Career Progression Bullets */}
@@ -98,32 +81,35 @@ export const WorkHeader: React.FC<WorkHeaderProps> = ({
               <div className='flex items-start gap-2.5 text-xs text-secondary leading-relaxed'>
                 <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#915EFF] shadow-[0_0_6px_#915EFF]' />
                 <span>
-                  <strong className='text-white font-medium'>Texto Digital (SDE):</strong> Scaled high-concurrency SaaS apps, optimized Core Web Vitals to 95+, and built modular component libraries.
+                  <strong className='text-white font-medium'>Texto Digital (SDE):</strong> Scaled high-concurrency SaaS
+                  apps, optimized Core Web Vitals to 95+, and built modular component libraries.
                 </span>
               </div>
               <div className='flex items-start gap-2.5 text-xs text-secondary leading-relaxed'>
                 <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400 shadow-[0_0_6px_#22d3ee]' />
                 <span>
-                  <strong className='text-white font-medium'>Catalyst Media (App Dev):</strong> Engineered responsive client products with fluid animations & sub-second page transitions.
+                  <strong className='text-white font-medium'>Catalyst Media (App Dev):</strong> Engineered responsive
+                  client products with fluid animations & sub-second page transitions.
                 </span>
               </div>
               <div className='flex items-start gap-2.5 text-xs text-secondary leading-relaxed'>
                 <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-400 shadow-[0_0_6px_#818cf8]' />
                 <span>
-                  <strong className='text-white font-medium'>HookFish (MERN & Native):</strong> Built cross-platform mobile app from scratch, created REST APIs, and modernized admin architecture.
+                  <strong className='text-white font-medium'>HookFish (MERN & Native):</strong> Built cross-platform
+                  mobile app from scratch, created REST APIs, and modernized admin architecture.
                 </span>
               </div>
             </div>
 
             {/* Footer Tags */}
             <div className='flex flex-wrap items-center gap-2 pt-2'>
-              <span className='rounded-md border border-white/5 bg-white/[0.03] px-2 py-0.5 font-mono text-[10px] text-white/70'>
+              <span className='rounded-md border border-white/5 bg-white/3 px-2 py-0.5 font-mono text-[10px] text-white/70'>
                 Full-Time Track Record
               </span>
-              <span className='rounded-md border border-white/5 bg-white/[0.03] px-2 py-0.5 font-mono text-[10px] text-white/70'>
+              <span className='rounded-md border border-white/5 bg-white/3 px-2 py-0.5 font-mono text-[10px] text-white/70'>
                 High-Concurrency SaaS
               </span>
-              <span className='rounded-md border border-white/5 bg-white/[0.03] px-2 py-0.5 font-mono text-[10px] text-white/70'>
+              <span className='rounded-md border border-white/5 bg-white/3 px-2 py-0.5 font-mono text-[10px] text-white/70'>
                 Mumbai & Hybrid
               </span>
             </div>
@@ -162,19 +148,22 @@ export const WorkHeader: React.FC<WorkHeaderProps> = ({
               <div className='flex items-start gap-2.5 text-xs text-secondary leading-relaxed'>
                 <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400 shadow-[0_0_6px_#22d3ee]' />
                 <span>
-                  <strong className='text-white font-medium'>Cross-Platform Mobile:</strong> React Native, 60fps gesture-driven interfaces, hardware acceleration, and seamless app store releases.
+                  <strong className='text-white font-medium'>Cross-Platform Mobile:</strong> React Native, 60fps
+                  gesture-driven interfaces, hardware acceleration, and seamless app store releases.
                 </span>
               </div>
               <div className='flex items-start gap-2.5 text-xs text-secondary leading-relaxed'>
                 <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399]' />
                 <span>
-                  <strong className='text-white font-medium'>Modern Frontend:</strong> Next.js (App Router), React 19, TypeScript, Tailwind CSS, and Framer Motion interactive systems.
+                  <strong className='text-white font-medium'>Modern Frontend:</strong> Next.js (App Router), React 19,
+                  TypeScript, Tailwind CSS, and Framer Motion interactive systems.
                 </span>
               </div>
               <div className='flex items-start gap-2.5 text-xs text-secondary leading-relaxed'>
                 <span className='mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400 shadow-[0_0_6px_#f59e0b]' />
                 <span>
-                  <strong className='text-white font-medium'>Backend & Data:</strong> Node.js, Express.js microservices, MongoDB schema design, Redis cache layers, and Cypress E2E.
+                  <strong className='text-white font-medium'>Backend & Data:</strong> Node.js, Express.js microservices,
+                  MongoDB schema design, Redis cache layers, and Cypress E2E.
                 </span>
               </div>
             </div>
@@ -202,5 +191,3 @@ export const WorkHeader: React.FC<WorkHeaderProps> = ({
 };
 
 export default WorkHeader;
-
-

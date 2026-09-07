@@ -4,6 +4,7 @@ import {
   mobile,
   backend,
   web,
+  creator,
   javascript,
   typescript,
   html,
@@ -31,7 +32,17 @@ export interface NavLink {
 
 export interface Service {
   title: string;
+  subtitle: string;
   icon: StaticImageData | string;
+  description: string;
+  capabilities: string[];
+  stackIcons: (IconName | 'jenkins' | 'detox')[];
+  tags: string[];
+  gradient: string;
+  accentBorder: string;
+  accentText: string;
+  badge: string;
+  indexNumber: string;
 }
 
 export interface Technology {
@@ -124,16 +135,80 @@ export const navLinks: NavLink[] = [
 
 export const services: Service[] = [
   {
-    title: 'React Native & Mobile Engineer',
-    icon: mobile,
-  },
-  {
+    indexNumber: '01',
     title: 'Full Stack & Web Architect',
+    subtitle: 'Modern Web Engineering',
     icon: web,
+    badge: 'Enterprise Web',
+    description:
+      'Architecting responsive, SEO-ready Next.js & React web applications with clean component design, type safety, and robust state management.',
+    capabilities: [
+      'Next.js App Router & SSR Architecture',
+      'Optimized Core Web Vitals & LCP',
+      'Type-Safe Component Design Systems',
+    ],
+    stackIcons: ['nextjs', 'react', 'typescript', 'tailwindcss'],
+    tags: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    gradient: 'from-[#915EFF]/20 via-indigo-500/10 to-transparent',
+    accentBorder: 'hover:border-[#915EFF]/60 hover:shadow-[0_16px_36px_-10px_rgba(145,94,255,0.25)]',
+    accentText: 'text-[#915EFF]',
   },
   {
-    title: 'Backend & API Developer',
+    indexNumber: '02',
+    title: 'Mobile Application Engineer',
+    subtitle: 'iOS & Android Systems',
+    icon: mobile,
+    badge: 'Cross-Platform Native',
+    description:
+      'Engineering production iOS & Android applications with native module bridges, real-time map geolocation, multimedia pipelines, and offline-first state synchronization.',
+    capabilities: [
+      'Native Module Bridges & Video SDK',
+      'Real-Time Geolocation & Map Overlays',
+      'Offline-First State Synchronization',
+    ],
+    stackIcons: ['react', 'js', 'typescript', 'firebase'],
+    tags: ['React Native', 'Expo', 'iOS & Android', 'State Sync'],
+    gradient: 'from-cyan-500/20 via-blue-500/10 to-transparent',
+    accentBorder: 'hover:border-cyan-500/60 hover:shadow-[0_16px_36px_-10px_rgba(0,245,255,0.22)]',
+    accentText: 'text-cyan-400',
+  },
+  {
+    indexNumber: '03',
+    title: 'Backend & Scalable APIs',
+    subtitle: 'Microservices & Queues',
     icon: backend,
+    badge: 'Distributed Systems',
+    description:
+      'Designing high-throughput RESTful Node.js/Express APIs, Redis caching layers, granular RBAC access controls, and MongoDB data pipelines.',
+    capabilities: [
+      'Redis In-Memory Caching (100ms response)',
+      'Granular 8-Tier RBAC Access Control',
+      'High-Throughput Microservice APIs',
+    ],
+    stackIcons: ['nodejs', 'expressjs', 'redis', 'mongodb'],
+    tags: ['Node.js', 'Express', 'Redis', 'MongoDB', 'RBAC'],
+    gradient: 'from-emerald-500/20 via-teal-500/10 to-transparent',
+    accentBorder: 'hover:border-emerald-500/60 hover:shadow-[0_16px_36px_-10px_rgba(16,185,129,0.22)]',
+    accentText: 'text-emerald-400',
+  },
+  {
+    indexNumber: '04',
+    title: 'Interactive 3D & Creative Developer',
+    subtitle: 'WebGL & Immersive UX',
+    icon: creator,
+    badge: 'Spatial Experiences',
+    description:
+      'Crafting engaging 3D web environments using Three.js and React Three Fiber with realistic lighting, procedural particles, and fluid canvas interactions.',
+    capabilities: [
+      'Three.js & React Three Fiber Scenes',
+      'Custom Shaders & Particle Systems',
+      'Dynamic WebGL Viewport Rendering',
+    ],
+    stackIcons: ['threejs', 'react', 'js', 'figma'],
+    tags: ['Three.js', 'React Three Fiber', 'WebGL', 'Framer Motion'],
+    gradient: 'from-pink-500/20 via-purple-500/10 to-transparent',
+    accentBorder: 'hover:border-pink-500/60 hover:shadow-[0_16px_36px_-10px_rgba(236,72,153,0.22)]',
+    accentText: 'text-pink-400',
   },
 ];
 
@@ -434,3 +509,49 @@ export const projects: Project[] = [
     live_demo_link: 'https://github.com/samcasmmm',
   },
 ];
+
+export interface SocialLink {
+  name: string;
+  url: string;
+  handle: string;
+  type: 'github' | 'linkedin' | 'email';
+  badge: string;
+  description: string;
+}
+
+export const socialLinks: SocialLink[] = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/samcasmmm',
+    handle: 'samcasmmm',
+    type: 'github',
+    badge: 'Code & Repos',
+    description: 'Explore full-stack source code, microservices & open source contributions.',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/samcasmmm/',
+    handle: 'samcasmmm',
+    type: 'linkedin',
+    badge: 'Professional Network',
+    description: 'Connect for career opportunities, engineering discussions & partnerships.',
+  },
+  {
+    name: 'Email',
+    url: 'mailto:sameerbagwan132@gmail.com',
+    handle: 'sameerbagwan132@gmail.com',
+    type: 'email',
+    badge: 'Direct Inbox',
+    description: 'Fastest channel for project consultations, inquiries & direct contracts.',
+  },
+];
+
+export const contactDetails = {
+  email: 'sameerbagwan132@gmail.com',
+  github: 'https://github.com/samcasmmm',
+  linkedin: 'https://www.linkedin.com/in/samcasmmm/',
+  location: 'Mumbai, India',
+  availability: 'Open for Full-time Roles & Contracts',
+  responseTime: '< 24 Hours',
+  timezone: 'IST (UTC +5:30)',
+};

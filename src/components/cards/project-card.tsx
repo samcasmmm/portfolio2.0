@@ -4,7 +4,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { github } from '@/assets';
 import type { Project } from '@/constants';
 import { fadeIn } from '@/utils/motion';
 import { ArrowUpRight } from 'lucide-react';
@@ -22,7 +21,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   keyMetrics,
   tags,
   image,
-  source_code_link,
 }) => {
   const topMetric = keyMetrics && keyMetrics.length > 0 ? keyMetrics[0] : null;
 
@@ -44,23 +42,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 <span>
                   {topMetric.label}: {topMetric.value}
                 </span>
-              </div>
-            )}
-
-            {/* GitHub Quick Link */}
-            {source_code_link && (
-              <div className='absolute top-3 right-3 z-10'>
-                <div
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(source_code_link, '_blank');
-                  }}
-                  className='black-gradient flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/20'
-                  role='button'
-                  aria-label={`View ${name} source code`}
-                >
-                  <Image src={github} alt='source code' width={18} height={18} className='object-contain' />
-                </div>
               </div>
             )}
           </div>

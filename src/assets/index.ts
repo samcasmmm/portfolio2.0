@@ -43,7 +43,7 @@ import textoproject from './projects/texto.png';
 import elevategolf from './projects/elevategolf.png';
 import hookfishproject from './projects/hookfish.png';
 
-export const ResumePDF = '/docs/samir-bagwan-resume.pdf';
+export const ResumePDF = '/docs/sameer_resume_26.pdf';
 
 export {
   logo,
