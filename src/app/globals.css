@@ -125,6 +125,38 @@
   -webkit-text-fill-color: transparent;
 }
 
+@keyframes waveGradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.wave-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #915EFF 0%,
+    #00f5ff 20%,
+    #38ef7d 40%,
+    #f59e0b 60%,
+    #ec4899 80%,
+    #915EFF 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: waveGradientMove 3.5s linear infinite;
+  display: inline-block;
+  will-change: background-position;
+}
+
+.smooth-gradient-flow {
+  background-size: 200% 200%;
+  animation: waveGradientMove 3.5s linear infinite;
+}
+
 /* Canvas loader */
 .canvas-loader {
   font-size: 10px;

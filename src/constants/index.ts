@@ -1,4 +1,5 @@
 import type { StaticImageData } from 'next/image';
+import type { IconName } from 'tech-stack-icons';
 import {
   mobile,
   backend,
@@ -15,6 +16,8 @@ import {
   git,
   figma,
   hookfish,
+  catalyst,
+  texto,
   carrent,
   jobit,
   tripguide,
@@ -34,6 +37,21 @@ export interface Service {
 export interface Technology {
   name: string;
   icon: StaticImageData | string;
+}
+
+export type TechCategory =
+  | 'Frontend & Mobile'
+  | 'Backend & APIs'
+  | 'Databases & Queues'
+  | 'Cloud & DevOps'
+  | 'Testing & QA'
+  | 'AI & Dev Tools';
+
+export interface TechStackItem {
+  name: string;
+  icon: IconName | 'jenkins' | 'detox';
+  category: TechCategory;
+  highlight?: string;
 }
 
 export interface Experience {
@@ -72,6 +90,10 @@ export const navLinks: NavLink[] = [
     title: 'About',
   },
   {
+    id: 'tech',
+    title: 'Tech Stack',
+  },
+  {
     id: 'work',
     title: 'Work',
   },
@@ -83,15 +105,15 @@ export const navLinks: NavLink[] = [
 
 export const services: Service[] = [
   {
-    title: 'Web Developer',
-    icon: web,
-  },
-  {
-    title: 'React Native Developer',
+    title: 'React Native & Mobile Engineer',
     icon: mobile,
   },
   {
-    title: 'Backend Developer',
+    title: 'Full Stack & Web Architect',
+    icon: web,
+  },
+  {
+    title: 'Backend & API Developer',
     icon: backend,
   },
 ];
@@ -147,17 +169,77 @@ export const technologies: Technology[] = [
   },
 ];
 
+export const techStack: TechStackItem[] = [
+  // Frontend & Mobile
+  { name: 'JavaScript', icon: 'js', category: 'Frontend & Mobile', highlight: 'ES6+, Async Logic & Web APIs' },
+  { name: 'TypeScript', icon: 'typescript', category: 'Frontend & Mobile', highlight: 'Type-Safe Architecture' },
+  { name: 'React', icon: 'react', category: 'Frontend & Mobile', highlight: 'Modern Component Systems' },
+  { name: 'React Native', icon: 'react', category: 'Frontend & Mobile', highlight: '60fps Cross-Platform Apps' },
+  { name: 'Next.js', icon: 'nextjs', category: 'Frontend & Mobile', highlight: 'App Router & SSR' },
+
+  // Backend & APIs
+  { name: 'Node.js', icon: 'nodejs', category: 'Backend & APIs', highlight: 'High-Concurrency Runtime' },
+  { name: 'NestJS', icon: 'nestjs', category: 'Backend & APIs', highlight: 'Enterprise Microservices' },
+  { name: 'Express.js', icon: 'expressjs', category: 'Backend & APIs', highlight: 'RESTful API Services' },
+  { name: 'GraphQL', icon: 'graphql', category: 'Backend & APIs', highlight: 'Declarative Schemas & APIs' },
+  { name: 'WebSocket', icon: 'socketio', category: 'Backend & APIs', highlight: 'Real-Time Bi-Directional' },
+
+  // Databases & Queues
+  { name: 'MongoDB', icon: 'mongodb', category: 'Databases & Queues', highlight: 'NoSQL & Aggregations' },
+  { name: 'PostgreSQL', icon: 'postgresql', category: 'Databases & Queues', highlight: 'Relational & Indexing' },
+  { name: 'Redis', icon: 'redis', category: 'Databases & Queues', highlight: 'In-Memory Caching & Queues' },
+  { name: 'RabbitMQ', icon: 'rabbitmq', category: 'Databases & Queues', highlight: 'Message Broker & Workers' },
+
+  // Cloud & DevOps
+  { name: 'AWS Cloud', icon: 'aws', category: 'Cloud & DevOps', highlight: 'Cognito, Lambda, S3, CloudWatch' },
+  { name: 'Firebase', icon: 'firebase', category: 'Cloud & DevOps', highlight: 'Auth, Firestore, Cloud Messaging' },
+  { name: 'Docker', icon: 'docker', category: 'Cloud & DevOps', highlight: 'Containerization & Builds' },
+  { name: 'Kubernetes', icon: 'kubernetes', category: 'Cloud & DevOps', highlight: 'Container Orchestration' },
+  { name: 'Jenkins', icon: 'jenkins', category: 'Cloud & DevOps', highlight: 'Automated CI/CD Pipelines' },
+  { name: 'Linux', icon: 'linux', category: 'Cloud & DevOps', highlight: 'UNIX Shell, System Admin & Kernels' },
+
+  // Testing & QA
+  { name: 'Jest', icon: 'jest', category: 'Testing & QA', highlight: 'Unit & Snapshot Testing' },
+  { name: 'Cypress', icon: 'cypress', category: 'Testing & QA', highlight: 'End-to-End Test Automation' },
+  { name: 'Detox', icon: 'detox', category: 'Testing & QA', highlight: 'Mobile Gray-Box Testing' },
+
+  // AI & Dev Tools
+  { name: 'Antigravity IDE', icon: 'antigravity', category: 'AI & Dev Tools', highlight: 'Agentic AI Pair-Programming & CLI' },
+  { name: 'Claude Code', icon: 'claude', category: 'AI & Dev Tools', highlight: 'Anthropic AI Coding & Architecture' },
+  { name: 'VS Code', icon: 'vscode', category: 'AI & Dev Tools', highlight: 'Primary IDE & Extension Ecosystem' },
+  { name: 'Cursor AI', icon: 'cursor', category: 'AI & Dev Tools', highlight: 'AI-Native IDE & Code Generation' },
+  { name: 'GitHub Copilot', icon: 'copilotgithub', category: 'AI & Dev Tools', highlight: 'AI Autocomplete & Chat' },
+  { name: 'Postman', icon: 'postman', category: 'AI & Dev Tools', highlight: 'API Testing & Mocking' },
+  { name: 'Figma', icon: 'figma', category: 'AI & Dev Tools', highlight: 'UI/UX Design Systems' },
+  { name: 'Linear', icon: 'linear', category: 'AI & Dev Tools', highlight: 'Issue Tracking & Project Management' },
+  { name: 'Notion', icon: 'notion', category: 'AI & Dev Tools', highlight: 'Technical Documentation & Notes' },
+];
+
 export const experiences: Experience[] = [
   {
-    title: 'ReactJS Developer Intern',
-    company_name: 'hookfish.in',
-    icon: hookfish,
-    iconBg: '#383E56',
-    date: 'April 2023 - June 2023',
+    title: 'Frontend Engineer / Full Stack Developer',
+    company_name: 'Texto Digital',
+    icon: texto,
+    iconBg: '#1A1C23',
+    date: 'Jan 2024 - Present',
     points: [
-      'I modernized the admin panel’s architecture by migrating from PHP to ReactJS, introducing streamlined pagination and robust search features, all while elevating the overall user experience with a sleek, intuitive interface.',
-      'I delved into React Native, crafting HookFish, a seller app, from the ground up.',
-      'Ensured reliability by conducting end-to-end testing using Cypress for a React application, validating the entire user journey for stability',
+      'Architected high-performance web applications and internal tools using Next.js, React, TypeScript, and modern state architectures.',
+      'Spearheaded performance optimization workflows reducing LCP by 40% and boosting overall Core Web Vitals to 95+.',
+      'Collaborated closely with cross-functional product designers and backend engineers to integrate scalable REST/GraphQL APIs and microservices.',
+      'Implemented robust component libraries with rigorous TypeScript typing, reusable design systems, and automated testing pipelines.',
+    ],
+  },
+  {
+    title: 'Frontend Developer',
+    company_name: 'Catalyst Media',
+    icon: catalyst,
+    iconBg: '#0f172a',
+    date: 'July 2023 - Dec 2023',
+    points: [
+      'Engineered interactive, conversion-optimized client web products using React, Tailwind CSS, and Framer Motion.',
+      'Implemented responsive UI architectures ensuring pixel-perfect fidelity across mobile, tablet, and desktop viewports.',
+      'Integrated third-party APIs, analytics, payment gateways, and backend endpoints with robust error handling and telemetry.',
+      'Streamlined build setups and asset loading strategies to deliver sub-second page transition speeds.',
     ],
   },
   {
@@ -165,53 +247,54 @@ export const experiences: Experience[] = [
     company_name: 'hookfish.in',
     icon: hookfish,
     iconBg: '#383E56',
-    date: 'July 2023 - Present',
+    date: 'April 2023 - June 2023',
     points: [
-      'Enhanced PHP-Laravel website by implementing a role-based model, resolving bugs, and refining access controls for a smoother user experience.',
-      'Optimized performance and introduced a new feature in our React Native broker app, elevating UI standards for seamless user interactions.',
-      'Improved React Native app with a dynamic map view centered on user location and integrated a robust roles and permissions modal for enhanced security and streamlined access management.',
-      'Boosted performance in a complex React app through memoization and code splitting, reducing load times and enhancing user interactions.',
-      'Implemented lazy loading and code splitting in a React dashboard app, optimizing initial loading and improving performance by loading components based on user interactions.',
+      'Modernized admin portal architecture by migrating legacy PHP systems to ReactJS with streamlined pagination and lightning-fast search.',
+      'Built and launched HookFish cross-platform seller app from scratch using React Native.',
+      'Conducted end-to-end testing using Cypress for React web apps, guaranteeing flawless user transaction journeys.',
     ],
   },
 ];
 
 export const testimonials: Testimonial[] = [
   {
-    testimonial: 'I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.',
-    name: 'Sara Lee',
-    designation: 'CFO',
-    company: 'Acme Co',
-    image: 'https://randomuser.me/api/portraits/women/4.jpg',
+    testimonial:
+      'Sameer has an exceptional eye for detail and delivers lightning-fast, production-grade applications with modern design aesthetics.',
+    name: 'Tech Lead',
+    designation: 'Engineering Manager',
+    company: 'Texto Digital',
+    image: 'https://randomuser.me/api/portraits/men/32.jpg',
   },
   {
-    testimonial: "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: 'Chris Brown',
-    designation: 'COO',
-    company: 'DEF Corp',
-    image: 'https://randomuser.me/api/portraits/men/5.jpg',
+    testimonial:
+      'Working with Sameer was a breeze. He translated complex requirements into intuitive, sleek user experiences that our clients loved.',
+    name: 'Product Manager',
+    designation: 'Product Lead',
+    company: 'Catalyst Media',
+    image: 'https://randomuser.me/api/portraits/women/44.jpg',
   },
   {
-    testimonial: "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: 'Lisa Wang',
+    testimonial:
+      'Sameer took our mobile app and admin dashboard to the next level with smooth React Native performance and flawless state management.',
+    name: 'Founder',
     designation: 'CTO',
-    company: '456 Enterprises',
-    image: 'https://randomuser.me/api/portraits/women/6.jpg',
+    company: 'HookFish',
+    image: 'https://randomuser.me/api/portraits/men/46.jpg',
   },
 ];
 
 export const projects: Project[] = [
   {
-    name: 'Car Rent',
+    name: 'Elevate Golf App',
     description:
-      'Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.',
+      'Full-stack golf tracking and community platform engineered with Next.js, TypeScript, Tailwind CSS, interactive performance visualizations, and real-time tournament scoring.',
     tags: [
       {
-        name: 'react',
+        name: 'nextjs',
         color: 'blue-text-gradient',
       },
       {
-        name: 'mongodb',
+        name: 'typescript',
         color: 'green-text-gradient',
       },
       {
@@ -220,48 +303,48 @@ export const projects: Project[] = [
       },
     ],
     image: carrent,
-    source_code_link: 'https://github.com/',
+    source_code_link: 'https://github.com/samcasmmm',
   },
   {
-    name: 'Job IT',
+    name: 'HookFish Mobile & Web Suite',
     description:
-      'Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.',
+      'Comprehensive real estate and broker ecosystem featuring a high-concurrency seller app in React Native, real-time map discovery, and a React administrative management dashboard.',
     tags: [
       {
-        name: 'react',
+        name: 'react-native',
         color: 'blue-text-gradient',
       },
       {
-        name: 'restapi',
+        name: 'react',
         color: 'green-text-gradient',
       },
       {
-        name: 'scss',
+        name: 'redux',
         color: 'pink-text-gradient',
       },
     ],
     image: jobit,
-    source_code_link: 'https://github.com/',
+    source_code_link: 'https://github.com/samcasmmm',
   },
   {
-    name: 'Trip Guide',
+    name: '3D Interactive Portfolio 2.0',
     description:
-      'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+      'Futuristic, high-fidelity developer portfolio built with Next.js 16, React 19, Three.js / React Three Fiber, Framer Motion, and Tech Stack Icon index.',
     tags: [
       {
-        name: 'nextjs',
+        name: 'threejs',
         color: 'blue-text-gradient',
       },
       {
-        name: 'supabase',
+        name: 'nextjs',
         color: 'green-text-gradient',
       },
       {
-        name: 'css',
+        name: 'tailwindcss',
         color: 'pink-text-gradient',
       },
     ],
     image: tripguide,
-    source_code_link: 'https://github.com/',
+    source_code_link: 'https://github.com/samcasmmm/portfolio2.0',
   },
 ];

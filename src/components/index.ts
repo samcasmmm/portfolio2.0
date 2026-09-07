@@ -18,5 +18,8 @@ export * from './cards';
 // 3D Canvas
 export * from './canvas';
 
+// Shared Components
+export * from './shared';
+
 // Common Utilities & Boundaries
 export * from './common';

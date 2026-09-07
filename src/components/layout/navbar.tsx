@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { styles } from '@/styles';
+import { styles } from '@/styles/styles';
 import { navLinks } from '@/constants';
 import { sblogo, menu, close, ResumePDF } from '@/assets';
 

@@ -1,13 +1,4 @@
-import {
-  About,
-  Contact,
-  Experience,
-  Tech,
-  Hero,
-  Navbar,
-  Works,
-  StarsCanvas,
-} from '@/components';
+import { About, Contact, Experience, Tech, Hero, Navbar, Works, StarsCanvas } from '@/components';
 
 export default function Home() {
   return (

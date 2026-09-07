@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { styles } from '@/styles';
+import { styles } from '@/styles/styles';
 import { services } from '@/constants';
 import { fadeIn, textVariant } from '@/utils/motion';
 import { SectionWrapper } from '@/hoc';
