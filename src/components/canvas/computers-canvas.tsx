@@ -1,9 +1,10 @@
 'use client';
 
-import React, { Suspense, useEffect, useState, useRef } from 'react';
+import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import type * as THREE from 'three';
+import { useIsMobile } from '@/hooks';
 import CanvasLoader from './canvas-loader';
 
 interface ComputersProps {
@@ -43,26 +44,7 @@ const Computers: React.FC<ComputersProps> = ({ isMobile }) => {
 };
 
 export const ComputersCanvas: React.FC = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isMounted, setIsMounted] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    const mediaQuery = window.matchMedia('(max-width: 500px)');
-    setIsMobile(mediaQuery.matches);
-
-    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
-      setIsMobile(event.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleMediaQueryChange);
-    };
-  }, []);
-
-  if (!isMounted) return null;
+  const isMobile = useIsMobile();
 
   return (
     <Canvas

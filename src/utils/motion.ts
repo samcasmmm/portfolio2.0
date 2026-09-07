@@ -6,8 +6,22 @@ export type AnimationType =
   | 'keyframes'
   | 'tween'
   | 'inertia'
-  | ''
-  | string;
+  | '';
+
+type ValidTransitionType = 'decay' | 'spring' | 'keyframes' | 'tween' | 'inertia';
+
+const resolveTransitionType = (type?: AnimationType): ValidTransitionType => {
+  if (
+    type === 'decay' ||
+    type === 'spring' ||
+    type === 'keyframes' ||
+    type === 'tween' ||
+    type === 'inertia'
+  ) {
+    return type;
+  }
+  return 'tween';
+};
 
 export const textVariant = (delay?: number): Variants => {
   return {
@@ -33,7 +47,7 @@ export const fadeIn = (
   delay: number = 0,
   duration: number = 0.75
 ): Variants => {
-  const transitionType = !type || type === '' ? 'tween' : (type as any);
+  const transitionType = resolveTransitionType(type);
 
   return {
     hidden: {
@@ -80,7 +94,7 @@ export const slideIn = (
   delay: number = 0,
   duration: number = 0.75
 ): Variants => {
-  const transitionType = !type || type === '' ? 'tween' : (type as any);
+  const transitionType = resolveTransitionType(type);
 
   return {
     hidden: {

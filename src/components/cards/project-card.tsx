@@ -28,16 +28,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+        className='bg-tertiary p-5 rounded-2xl sm:w-90 w-full'
       >
-        <div className='relative w-full h-[230px] rounded-2xl overflow-hidden'>
-          <Image
-            src={image}
-            alt={name}
-            fill
-            sizes='(max-width: 768px) 100vw, 360px'
-            className='object-cover'
-          />
+        <div className='relative w-full h-57.5 rounded-2xl overflow-hidden'>
+          <Image src={image} alt={name} fill sizes='(max-width: 768px) 100vw, 360px' className='object-cover' />
 
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
             <div
@@ -46,30 +40,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               role='button'
               aria-label={`View ${name} source code`}
             >
-              <Image
-                src={github}
-                alt='source code'
-                width={20}
-                height={20}
-                className='object-contain'
-              />
+              <Image src={github} alt='source code' width={20} height={20} className='object-contain' />
             </div>
           </div>
         </div>
 
         <div className='mt-5'>
           <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px] line-clamp-4'>
-            {description}
-          </p>
+          <p className='mt-2 text-secondary text-[14px] line-clamp-4'>{description}</p>
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
+            <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
               #{tag.name}
             </p>
           ))}

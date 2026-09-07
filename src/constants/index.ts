@@ -2,7 +2,6 @@ import type { StaticImageData } from 'next/image';
 import {
   mobile,
   backend,
-  creator,
   web,
   javascript,
   typescript,
@@ -15,12 +14,7 @@ import {
   mongodb,
   git,
   figma,
-  docker,
-  meta,
-  starbucks,
   hookfish,
-  tesla,
-  shopify,
   carrent,
   jobit,
   tripguide,
@@ -184,24 +178,21 @@ export const experiences: Experience[] = [
 
 export const testimonials: Testimonial[] = [
   {
-    testimonial:
-      'I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.',
+    testimonial: 'I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.',
     name: 'Sara Lee',
     designation: 'CFO',
     company: 'Acme Co',
     image: 'https://randomuser.me/api/portraits/women/4.jpg',
   },
   {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+    testimonial: "I've never met a web developer who truly cares about their clients' success like Rick does.",
     name: 'Chris Brown',
     designation: 'COO',
     company: 'DEF Corp',
     image: 'https://randomuser.me/api/portraits/men/5.jpg',
   },
   {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+    testimonial: "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
     name: 'Lisa Wang',
     designation: 'CTO',
     company: '456 Enterprises',

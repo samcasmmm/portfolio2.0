@@ -12,9 +12,7 @@ export const Navbar: React.FC = () => {
   const [toggle, setToggle] = useState<boolean>(false);
 
   return (
-    <nav
-      className={`${styles.paddingX} w-full flex items-center py-3 fixed top-0 z-20 bg-primary/80 backdrop-blur-md`}
-    >
+    <nav className={`${styles.paddingX} w-full flex items-center py-3 fixed top-0 z-20 bg-primary/80 backdrop-blur-md`}>
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
           href='/'
@@ -51,12 +49,7 @@ export const Navbar: React.FC = () => {
             </li>
           ))}
           <li>
-            <a
-              id='downloadLink'
-              href={ResumePDF}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
+            <a id='downloadLink' href={ResumePDF} target='_blank' rel='noopener noreferrer'>
               <button
                 type='button'
                 className='rounded-lg bg-white px-5 py-2 font-bold text-black transition-all duration-150 hover:bg-slate-200 cursor-pointer shadow-sm hover:shadow'
@@ -80,7 +73,7 @@ export const Navbar: React.FC = () => {
           <div
             className={`${
               !toggle ? 'hidden' : 'flex'
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl shadow-lg`}
+            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-35 z-10 rounded-xl shadow-lg`}
           >
             <ul className='list-none flex justify-end items-start flex-col gap-4'>
               {navLinks.map((link) => (
@@ -100,11 +93,7 @@ export const Navbar: React.FC = () => {
                 </li>
               ))}
               <li>
-                <a
-                  href={ResumePDF}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
+                <a href={ResumePDF} target='_blank' rel='noopener noreferrer'>
                   <button
                     type='button'
                     className='rounded-lg bg-white px-4 py-2 font-bold text-black transition-all duration-150 hover:bg-slate-200 cursor-pointer'

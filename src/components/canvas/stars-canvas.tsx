@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, Suspense, useEffect } from 'react';
+import React, { useState, useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial, Preload } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
@@ -35,14 +35,6 @@ const Stars: React.FC<React.ComponentProps<typeof Points>> = (props) => {
 };
 
 export const StarsCanvas: React.FC = () => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) return null;
-
   return (
     <div className='w-full h-auto absolute inset-0 z-[-1] pointer-events-none'>
       <Canvas camera={{ position: [0, 0, 1] }}>

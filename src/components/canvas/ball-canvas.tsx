@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import {
   Decal,
@@ -47,14 +47,7 @@ export interface BallCanvasProps {
 }
 
 export const BallCanvas: React.FC<BallCanvasProps> = ({ icon }) => {
-  const [isMounted, setIsMounted] = useState(false);
   const iconUrl = typeof icon === 'string' ? icon : icon.src;
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) return null;
 
   return (
     <Canvas
