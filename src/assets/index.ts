@@ -39,6 +39,9 @@ import texto from './company/texto.png';
 import carrent from './projects/carrent.png';
 import jobit from './projects/jobit.png';
 import tripguide from './projects/tripguide.png';
+import textoproject from './projects/texto.png';
+import elevategolf from './projects/elevategolf.png';
+import hookfishproject from './projects/hookfish.png';
 
 export const ResumePDF = '/docs/samir-bagwan-resume.pdf';
 
@@ -75,4 +78,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  textoproject,
+  elevategolf,
+  hookfishproject,
 };

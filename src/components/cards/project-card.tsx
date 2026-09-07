@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { github } from '@/assets';
 import type { Project } from '@/constants';
 import { fadeIn } from '@/utils/motion';
+import { ArrowUpRight } from 'lucide-react';
 
 export interface ProjectCardProps extends Project {
   index: number;
@@ -14,50 +15,89 @@ export interface ProjectCardProps extends Project {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   index,
+  slug,
   name,
+  subtitle,
   description,
+  keyMetrics,
   tags,
   image,
   source_code_link,
 }) => {
-  return (
-    <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-90 w-full'
-      >
-        <div className='relative w-full h-57.5 rounded-2xl overflow-hidden'>
-          <Image src={image} alt={name} fill sizes='(max-width: 768px) 100vw, 360px' className='object-cover' />
+  const topMetric = keyMetrics && keyMetrics.length > 0 ? keyMetrics[0] : null;
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-            <div
-              onClick={() => window.open(source_code_link, '_blank')}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform'
-              role='button'
-              aria-label={`View ${name} source code`}
-            >
-              <Image src={github} alt='source code' width={20} height={20} className='object-contain' />
-            </div>
+  return (
+    <motion.div variants={fadeIn('up', 'spring', index * 0.3, 0.75)}>
+      <div className='relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#0c0d18]/90 p-5 backdrop-blur-md sm:w-90 w-full h-full'>
+        <div>
+          {/* Card Image Banner */}
+          <div className='relative w-full h-52 rounded-xl overflow-hidden border border-white/5'>
+            <Image src={image} alt={name} fill sizes='(max-width: 768px) 100vw, 360px' className='object-cover' />
+
+            {/* Ambient Image Gradient Overlay */}
+            <div className='absolute inset-0 bg-linear-to-t from-[#0c0d18] via-transparent to-black/30' />
+
+            {/* Top Metric Badge */}
+            {topMetric && (
+              <div className='absolute top-3 left-3 flex items-center gap-1.5 rounded-full border border-[#915EFF]/40 bg-black/70 px-3 py-1 font-mono text-[10px] font-bold text-[#00f5ff] backdrop-blur-md shadow-[0_0_12px_rgba(0,245,255,0.3)]'>
+                <span className='h-1.5 w-1.5 rounded-full bg-cyan-400' />
+                <span>
+                  {topMetric.label}: {topMetric.value}
+                </span>
+              </div>
+            )}
+
+            {/* GitHub Quick Link */}
+            {source_code_link && (
+              <div className='absolute top-3 right-3 z-10'>
+                <div
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(source_code_link, '_blank');
+                  }}
+                  className='black-gradient flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/20'
+                  role='button'
+                  aria-label={`View ${name} source code`}
+                >
+                  <Image src={github} alt='source code' width={18} height={18} className='object-contain' />
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Card Content */}
+          <div className='mt-4 space-y-2'>
+            <span className='font-mono text-[10px] font-semibold tracking-widest text-[#915EFF] uppercase'>
+              {subtitle || 'Production Engineering'}
+            </span>
+
+            <h3 className='font-mono text-xl font-bold text-white'>{name}</h3>
+
+            <p className='text-xs leading-relaxed font-light text-secondary line-clamp-3'>{description}</p>
           </div>
         </div>
 
-        <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px] line-clamp-4'>{description}</p>
-        </div>
+        {/* Card Footer: Tags & Detail Case Study Link */}
+        <div className='mt-5 space-y-4 border-t border-white/5 pt-4'>
+          {/* Tags */}
+          <div className='flex flex-wrap gap-2'>
+            {tags.map((tag) => (
+              <span key={`${name}-${tag.name}`} className={`font-mono text-[11px] ${tag.color}`}>
+                #{tag.name}
+              </span>
+            ))}
+          </div>
 
-        <div className='mt-4 flex flex-wrap gap-2'>
-          {tags.map((tag) => (
-            <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
-              #{tag.name}
-            </p>
-          ))}
+          {/* Link to Detail Page */}
+          <Link
+            href={`/projects/${slug}`}
+            className='inline-flex w-full items-center justify-between rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 font-mono text-xs font-semibold text-white hover:border-[#915EFF] hover:bg-[#915EFF]/20 hover:text-cyan-300 transition-all'
+          >
+            <span>Read Case Study</span>
+            <ArrowUpRight className='h-4 w-4' />
+          </Link>
         </div>
-      </Tilt>
+      </div>
     </motion.div>
   );
 };

@@ -1,37 +1,39 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
-
-import { styles } from '@/styles/styles';
 import { SectionWrapper } from '@/hoc';
 import { projects } from '@/constants';
-import { fadeIn, textVariant } from '@/utils/motion';
 import { ProjectCard } from '@/components/cards';
+import { RenderSectionHeader } from '@/components/shared';
 
 export const WorksSection: React.FC = () => {
   return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
-      </motion.div>
+    <section aria-labelledby='works-heading' className='relative w-full py-6'>
+      {/* Background ambient glow */}
+      <div className='pointer-events-none absolute top-1/2 left-1/2 h-125 w-full max-w-6xl -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(0,245,255,0.06)_0%,transparent_70%)]' />
 
-      <div className='w-full flex'>
-        <motion.p variants={fadeIn('', '', 0.1, 1)} className='mt-3 text-secondary text-[17px] max-w-3xl leading-7.5'>
-          Following projects showcase my skills and experience through real-world examples of my work. Each project is
-          briefly described with links to code repositories and live demos in it. It reflects my ability to solve
-          complex problems, work with different technologies, and manage projects effectively.
-        </motion.p>
-      </div>
+      <div className='mx-auto max-w-6xl'>
+        {/* Header */}
+        <div className='mb-12'>
+          <RenderSectionHeader
+            id='works-heading'
+            badge='Production Work'
+            title='Featured Systems & Engineering Projects.'
+            highlightedWords={['Engineering', 'Systems']}
+            description='Production platforms, high-concurrency SaaS engines, 60fps mobile architectures, and microservices engineered across my career.'
+            wrapperClassName='mb-0 text-left'
+          />
+        </div>
 
-      <div className='mt-20 flex flex-wrap gap-7 justify-center sm:justify-start'>
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
+        {/* Projects Grid */}
+        <div className='flex flex-wrap gap-8 justify-center sm:justify-start items-stretch'>
+          {projects.map((project, index) => (
+            <ProjectCard key={project.slug} index={index} {...project} />
+          ))}
+        </div>
       </div>
-    </>
+    </section>
   );
 };
 
-export default SectionWrapper(WorksSection, '');
+export default SectionWrapper(WorksSection, 'work');

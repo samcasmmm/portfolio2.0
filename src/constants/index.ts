@@ -18,9 +18,9 @@ import {
   hookfish,
   catalyst,
   texto,
-  carrent,
-  jobit,
-  tripguide,
+  textoproject,
+  elevategolf,
+  hookfishproject,
   threejs,
 } from '@/assets';
 
@@ -60,6 +60,9 @@ export interface Experience {
   icon: StaticImageData | string;
   iconBg: string;
   date: string;
+  location?: string;
+  isCurrent?: boolean;
+  skills?: string[];
   points: string[];
 }
 
@@ -76,12 +79,28 @@ export interface ProjectTag {
   color: string;
 }
 
+export interface ProjectMetric {
+  label: string;
+  value: string;
+  subtext?: string;
+}
+
 export interface Project {
+  slug: string;
   name: string;
+  subtitle: string;
+  role: string;
+  period: string;
   description: string;
+  problemStatement: string;
+  solutionOverview: string;
+  keyMetrics: ProjectMetric[];
+  techStackIcons: (IconName | 'jenkins' | 'detox')[];
   tags: ProjectTag[];
   image: StaticImageData | string;
-  source_code_link: string;
+  highlights: string[];
+  source_code_link?: string;
+  live_demo_link?: string;
 }
 
 export const navLinks: NavLink[] = [
@@ -204,7 +223,12 @@ export const techStack: TechStackItem[] = [
   { name: 'Detox', icon: 'detox', category: 'Testing & QA', highlight: 'Mobile Gray-Box Testing' },
 
   // AI & Dev Tools
-  { name: 'Antigravity IDE', icon: 'antigravity', category: 'AI & Dev Tools', highlight: 'Agentic AI Pair-Programming & CLI' },
+  {
+    name: 'Antigravity IDE',
+    icon: 'antigravity',
+    category: 'AI & Dev Tools',
+    highlight: 'Agentic AI Pair-Programming & CLI',
+  },
   { name: 'Claude Code', icon: 'claude', category: 'AI & Dev Tools', highlight: 'Anthropic AI Coding & Architecture' },
   { name: 'VS Code', icon: 'vscode', category: 'AI & Dev Tools', highlight: 'Primary IDE & Extension Ecosystem' },
   { name: 'Cursor AI', icon: 'cursor', category: 'AI & Dev Tools', highlight: 'AI-Native IDE & Code Generation' },
@@ -217,41 +241,66 @@ export const techStack: TechStackItem[] = [
 
 export const experiences: Experience[] = [
   {
-    title: 'Frontend Engineer / Full Stack Developer',
-    company_name: 'Texto Digital',
+    title: 'SDE',
+    company_name: 'Texto Digital Software Private Limited',
     icon: texto,
-    iconBg: '#1A1C23',
-    date: 'Jan 2024 - Present',
+    iconBg: '#FFFFFF',
+    date: 'May 2026 – Present',
+    location: 'Full-time • Navi Mumbai, India',
+    isCurrent: true,
+    skills: ['React Native', 'Next.js', 'React', 'TypeScript', 'Node.js', 'Tailwind CSS', 'WhatsApp API', 'Redis'],
     points: [
-      'Architected high-performance web applications and internal tools using Next.js, React, TypeScript, and modern state architectures.',
-      'Spearheaded performance optimization workflows reducing LCP by 40% and boosting overall Core Web Vitals to 95+.',
-      'Collaborated closely with cross-functional product designers and backend engineers to integrate scalable REST/GraphQL APIs and microservices.',
-      'Implemented robust component libraries with rigorous TypeScript typing, reusable design systems, and automated testing pipelines.',
+      'Architecting high-performance web applications and internal tools using Next.js, React, TypeScript, and modern state architectures.',
+      'Spearheading performance optimization workflows reducing LCP by 40% and boosting overall Core Web Vitals to 95+.',
+      'Collaborating closely with cross-functional product designers and backend engineers to integrate scalable REST/GraphQL APIs and microservices.',
+      'Implementing robust component libraries with rigorous TypeScript typing, reusable design systems, and automated testing pipelines.',
     ],
   },
   {
-    title: 'Frontend Developer',
-    company_name: 'Catalyst Media',
+    title: 'App Developer',
+    company_name: 'Catalyst Media Integrated LLP',
     icon: catalyst,
-    iconBg: '#0f172a',
-    date: 'July 2023 - Dec 2023',
+    iconBg: '#FFFFFF',
+    date: 'Feb 2025 – May 2026',
+    location: 'Full-time • Mumbai, India',
+    isCurrent: false,
+    skills: ['React Native', 'React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'REST APIs', 'Redux'],
     points: [
-      'Engineered interactive, conversion-optimized client web products using React, Tailwind CSS, and Framer Motion.',
-      'Implemented responsive UI architectures ensuring pixel-perfect fidelity across mobile, tablet, and desktop viewports.',
-      'Integrated third-party APIs, analytics, payment gateways, and backend endpoints with robust error handling and telemetry.',
-      'Streamlined build setups and asset loading strategies to deliver sub-second page transition speeds.',
+      'Architected and shipped responsive, high-performance web applications and native mobile interfaces with React Native & React.',
+      'Developed modular UI components, integrated third-party APIs, and enhanced state management architectures for seamless user journeys.',
+      'Optimized rendering cycles, bundle size, and animations using Framer Motion and native hardware-accelerated drivers.',
+      'Collaborated closely with product stakeholders and design teams to deliver pixel-perfect client experiences.',
     ],
   },
   {
-    title: 'Frontend & React Native Developer',
-    company_name: 'hookfish.in',
+    title: 'MERN & React Native Developer',
+    company_name: 'HookFish (hookfish.in)',
     icon: hookfish,
-    iconBg: '#383E56',
-    date: 'April 2023 - June 2023',
+    iconBg: '#FFFFFF',
+    date: 'June 2023 – Feb 2025',
+    location: 'Full-time • Hybrid',
+    isCurrent: false,
+    skills: ['React Native', 'MongoDB', 'Express.js', 'React.js', 'Node.js', 'TypeScript', 'Redis', 'Tailwind CSS'],
     points: [
-      'Modernized admin portal architecture by migrating legacy PHP systems to ReactJS with streamlined pagination and lightning-fast search.',
-      'Built and launched HookFish cross-platform seller app from scratch using React Native.',
-      'Conducted end-to-end testing using Cypress for React web apps, guaranteeing flawless user transaction journeys.',
+      'Engineered and scaled the HookFish cross-platform mobile app using React Native, delivering seamless buyer and seller transactions.',
+      'Architected scalable backend microservices, REST APIs, and database schemas with Node.js, Express.js, and MongoDB.',
+      'Integrated Redis caching mechanisms and optimized database indexes to reduce API latency across high-traffic endpoints.',
+      'Maintained 99.9% uptime and streamlined admin portal operations with real-time analytics and fast data querying.',
+    ],
+  },
+  {
+    title: 'MERN Stack Developer (Intern)',
+    company_name: 'HookFish (hookfish.in)',
+    icon: hookfish,
+    iconBg: '#FFFFFF',
+    date: 'April 2023 – June 2023',
+    location: 'Internship • Hybrid',
+    isCurrent: false,
+    skills: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JavaScript', 'Cypress E2E'],
+    points: [
+      'Modernized admin portal architecture by migrating legacy PHP workflows to React.js with responsive pagination and fast search.',
+      'Developed reusable UI components and integrated foundational REST APIs for user authentication and data management.',
+      'Conducted end-to-end automated testing using Cypress for web applications, guaranteeing reliable user transaction flows.',
     ],
   },
 ];
@@ -285,66 +334,103 @@ export const testimonials: Testimonial[] = [
 
 export const projects: Project[] = [
   {
-    name: 'Elevate Golf App',
+    slug: 'texto-whatsapp-automation',
+    name: 'Texto Automation Engine',
+    subtitle: 'WhatsApp Business API SaaS Platform & Chatbot Flow Builder',
+    role: 'React Native Developer & SDE',
+    period: 'May 2026 – Present',
     description:
-      'Full-stack golf tracking and community platform engineered with Next.js, TypeScript, Tailwind CSS, interactive performance visualizations, and real-time tournament scoring.',
-    tags: [
-      {
-        name: 'nextjs',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'typescript',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'tailwind',
-        color: 'pink-text-gradient',
-      },
+      'Engineered core communication modules for Texto, a high-concurrency SaaS platform tailored for Indian businesses. Automated WhatsApp customer engagement via drag-and-drop chatbot flow builders, live lead pipelines, and scheduled broadcast engines.',
+    problemStatement:
+      'Indian SMBs faced fragmented lead tracking and manual customer messaging over WhatsApp, leading to delayed response times and high drop-off rates during campaign spikes.',
+    solutionOverview:
+      'Architected a multi-tenant Node.js + React SaaS application powered by WhatsApp Business API integration, Redis-backed queue scheduling, and real-time WebSocket dashboard sync.',
+    keyMetrics: [
+      { label: 'Broadcast Throughput', value: '10k+ msgs/min', subtext: 'Redis Queue Worker' },
+      { label: 'Platform Availability', value: '99.9% Uptime', subtext: 'High Concurrency Node.js' },
+      { label: 'Lead Conversion', value: '+45% Growth', subtext: 'Automated Bot Flows' },
     ],
-    image: carrent,
+    techStackIcons: ['react', 'nodejs', 'postgresql', 'redis', 'tailwindcss', 'socketio', 'js', 'typescript'],
+    tags: [
+      { name: 'react', color: 'blue-text-gradient' },
+      { name: 'nodejs', color: 'green-text-gradient' },
+      { name: 'whatsapp-api', color: 'pink-text-gradient' },
+    ],
+    image: textoproject,
+    highlights: [
+      'Architected drag-and-drop chatbot flow builder empowering non-technical users to build multi-step conversational funnels.',
+      'Engineered Redis broadcast queue manager handling thousands of concurrent message dispatches with automatic retry logic.',
+      'Integrated official WhatsApp Business API webhooks with real-time WebSocket status updates on live agent dashboards.',
+      'Optimized PostgreSQL index structures and connection pooling to deliver instantaneous query speeds across millions of message logs.',
+    ],
     source_code_link: 'https://github.com/samcasmmm',
+    live_demo_link: 'https://github.com/samcasmmm',
   },
   {
-    name: 'HookFish Mobile & Web Suite',
+    slug: 'elevate-golf-app',
+    name: 'Elevate Golf Mobile Platform',
+    subtitle: '60fps AI Swing Analysis & Real-Time Video Annotations',
+    role: 'Lead React Native Developer',
+    period: 'Feb 2025 – Feb 2026',
     description:
-      'Comprehensive real estate and broker ecosystem featuring a high-concurrency seller app in React Native, real-time map discovery, and a React administrative management dashboard.',
-    tags: [
-      {
-        name: 'react-native',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'react',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'redux',
-        color: 'pink-text-gradient',
-      },
+      'Built a React Native mobile coaching platform engineered for split-second 60fps video playback analysis, real-time drawing annotations, and AI performance metrics.',
+    problemStatement:
+      'Mobile video playback in coaching applications suffered from frame dropping and latency during drawing overlays, rendering micro-movement swing inspections inaccurate.',
+    solutionOverview:
+      'Optimized React Native native video decoding using Video-SDK, canvas overlays, 3-tier Firebase RBAC auth, Node.js microservices, and AWS CloudFront CDN media delivery.',
+    keyMetrics: [
+      { label: 'Playback Frame Rate', value: '60 FPS', subtext: 'Zero Jitter Annotation' },
+      { label: 'Media Load Latency', value: '< 2s', subtext: 'AWS CloudFront CDN' },
+      { label: 'System Uptime SLA', value: '99.5%', subtext: 'Firebase & AWS S3' },
     ],
-    image: jobit,
+    techStackIcons: ['react', 'nodejs', 'expressjs', 'mysql', 'firebase', 'aws', 'tailwindcss'],
+    tags: [
+      { name: 'react-native', color: 'blue-text-gradient' },
+      { name: 'firebase', color: 'green-text-gradient' },
+      { name: 'aws-cloudfront', color: 'pink-text-gradient' },
+    ],
+    image: elevategolf,
+    highlights: [
+      'Engineered 60fps React Native video player with sub-frame pause, slow-motion scrubbing, and touch drawing canvas overlays.',
+      'Implemented Firebase Auth (OAuth 2.0/JWT) with 3-tier Role-Based Access Control (RBAC) supporting 500+ active user sessions.',
+      'Optimized media pipeline with AWS S3 server-side encryption and CloudFront CDN signed URL delivery achieving sub-2s video startup.',
+      'Delivered robust Node.js REST APIs for recording player progress, telemetry data, and coaching feedback loops.',
+    ],
     source_code_link: 'https://github.com/samcasmmm',
+    live_demo_link: 'https://github.com/samcasmmm',
   },
   {
-    name: '3D Interactive Portfolio 2.0',
+    slug: 'hookfish-real-estate-suite',
+    name: 'HookFish Mobile & Cloud Suite',
+    subtitle: 'Real Estate Broker Mobile App & High-Throughput MERN Backend',
+    role: 'MERN Stack Developer & React Native Engineer',
+    period: 'Apr 2023 – Feb 2025',
     description:
-      'Futuristic, high-fidelity developer portfolio built with Next.js 16, React 19, Three.js / React Three Fiber, Framer Motion, and Tech Stack Icon index.',
-    tags: [
-      {
-        name: 'threejs',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'nextjs',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'tailwindcss',
-        color: 'pink-text-gradient',
-      },
+      'Full-stack real estate ecosystem featuring a React Native mobile broker application with geolocation map discovery, administrative management dashboard, and automated image pipelines.',
+    problemStatement:
+      'Legacy PHP system suffered from slow API response times (2.1s), manual property flyer generation (6s), and security vulnerabilities due to lack of granular access control.',
+    solutionOverview:
+      'Refactored backend architecture to Node.js/Express, implemented Redis caching, migrated admin to React, built React Native seller app, and secured platform with 8-tier RBAC.',
+    keyMetrics: [
+      { label: 'API Response Speed', value: '2.1s → 1.0s', subtext: '52% Latency Reduction' },
+      { label: 'Throughput', value: '1,200 req/sec', subtext: 'Serving 10k+ MAU' },
+      { label: 'Image Cache Speed', value: '6s → 100ms', subtext: '98% Redis Speedup' },
     ],
-    image: tripguide,
-    source_code_link: 'https://github.com/samcasmmm/portfolio2.0',
+    techStackIcons: ['react', 'nodejs', 'expressjs', 'mongodb', 'redis', 'cypress', 'js'],
+    tags: [
+      { name: 'react-native', color: 'blue-text-gradient' },
+      { name: 'mongodb', color: 'green-text-gradient' },
+      { name: 'redis', color: 'pink-text-gradient' },
+    ],
+    image: hookfishproject,
+    highlights: [
+      'Architected 12+ RESTful Node.js/Express APIs with MongoDB connection pooling serving 10k+ monthly active users at 99.7% SLA.',
+      'Optimized Puppeteer property flyer generation from 6s to 100ms using Redis caching & queue management (1,000+ images/hr).',
+      'Designed 8-tier granular RBAC security model, eliminating 100% of unauthorized access incidents and reducing support tickets by 55%.',
+      'Integrated dynamic React Native map view centered on user geolocation with real-time property boundary overlays.',
+      'Enforced end-to-end reliability by executing automated Cypress test suites across critical user transaction funnels.',
+    ],
+    source_code_link: 'https://github.com/samcasmmm',
+    live_demo_link: 'https://github.com/samcasmmm',
   },
 ];
